@@ -1,0 +1,17 @@
+﻿syntax = "proto3";
+option csharp_namespace = "Messages";
+
+message BusinessUnit{
+	string UnitLName = 1;
+	string Wbs = 2;
+}
+
+message GetAllRequest {}
+
+message GetAllResponse {
+	BusinessUnit businessUnit = 1;
+}
+
+service BusinessUnitService{
+	rpc GetAll(GetAllRequest) returns (stream GetAllResponse);
+}
