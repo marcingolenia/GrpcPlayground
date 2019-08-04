@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcPlayground.Client", "Gr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcPlayground.Contract", "GrpcPlayground.Contract\GrpcPlayground.Contract.csproj", "{C38E587C-1A8E-4E0D-8575-6954AF4B9F8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcPlayground.Server", "GrpcPlayground.Server\GrpcPlayground.Server.csproj", "{07016D8D-7697-4B08-A915-0C08C9208CF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcPlayground.Server", "GrpcPlayground.Server\GrpcPlayground.Server.csproj", "{07016D8D-7697-4B08-A915-0C08C9208CF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

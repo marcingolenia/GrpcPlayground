@@ -1,4 +1,7 @@
-﻿namespace GrpcPlayground.Client
+﻿using System.Collections.Generic;
+using System.IO;
+
+namespace GrpcPlayground.Client
 {
     using System;
     using System.Threading.Tasks;
@@ -12,8 +15,8 @@
         static async Task Main(string[] args)
         {
             const int port = 50050;
-            const string host = "127.0.0.1";
-            var channel = new Channel(host, port, ChannelCredentials.Insecure);
+            const string host = "DESKTOP-DERTRE3";
+            var channel = new Channel(host, port, GetCredentials());
             var client = new BusinessUnitService.BusinessUnitServiceClient(channel);
             Console.WriteLine("GrpcClient is ready to issue requests. Press any key to start");
             Console.ReadKey();
@@ -40,5 +43,12 @@
                 Console.WriteLine(greetingsReply.Message);
             }
         }
+
+        private static SslCredentials GetCredentials() =>
+            new SslCredentials(
+                    File.ReadAllText("c:\\certs\\ca.crt"),
+                    new KeyCertificatePair(
+                        File.ReadAllText("c:\\certs\\client.crt"),
+                        File.ReadAllText("c:\\certs\\client.key")));
     }
 }
